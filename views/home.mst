@@ -1,0 +1,7 @@
+<h1>Essa e a home</h1>
+
+<p>Eu sou um paragrafo</p>
+
+<hr>
+
+{{> header}}
