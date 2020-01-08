@@ -1,1 +1,9 @@
 <h1>EU SOU O HEADER</h1>
+
+<ul>
+{{#h.menu}}
+
+<li><a href="{{slug}}">{{nome}}</li>
+
+{{/h.menu}}
+</ul>

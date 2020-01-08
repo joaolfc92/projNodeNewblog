@@ -1,19 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const homeController = require('../controllers/homeController');
+const sobreController = require('../controllers/sobreController')
+const contatoController = require('../controllers/contatoController')
 
-router.get('/', (req,res)=>{
-    res.render('home',{
-        'nome':'joao',
-        'idade':20,
 
-        ingredientes :[
-            {nome : 'fermento', qtd : '5g'},
-            {nome: 'farinha', qtd: '500g'}
-        ]
-    });
+// (nome do arquivo. nome da função criada no arquivo)
 
-   
-})
+router.get('/',homeController.userLog ,homeController.index)
+router.get('/sobre', sobreController.sobreController)
+router.get('/contato', contatoController.contatoController)  
+
 
 
 

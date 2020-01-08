@@ -5,3 +5,6 @@
 <hr>
 
 {{> header}}
+
+{{userInfo.name}}
+{{userInfo.id}}
