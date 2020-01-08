@@ -12,6 +12,11 @@ mongoose.connection.on('error',(error)=>{
 })
 
 
+// carregando os MODELS
+
+require('./models/Post');
+
+
 
 //CONEXÃO COM SERVIDOR
 app.set('port', process.env.PORT || 8081); // (nome da função + estou importando o arquivo variables.env, com as configurações de ambiente)

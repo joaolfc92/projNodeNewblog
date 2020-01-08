@@ -1,3 +1,3 @@
 exports.contatoController = (req,res)=>{
-    res.render('contato')
+    res.render('contato') 
 }
