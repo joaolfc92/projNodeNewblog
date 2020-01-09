@@ -6,5 +6,13 @@
 
 {{> header}}
 
-{{userInfo.name}}
-{{userInfo.id}}
+{{#posts}}
+    <h3><a href="/posts/{{slug}}"> {{title}}</a></h3>
+    <p>{{body}}</p>
+    <hr>
+
+{{/posts}}
+
+{{^posts}}
+    <div>Nenhum post encontrado</div>
+{{/posts}}

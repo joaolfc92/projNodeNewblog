@@ -1,12 +1,17 @@
 {{> header}}
 
-<h2>Adicionar Post</h2>
+{{#flashes}}
+    {{#error}}
+        <div>{{.}}</div>
+    {{/error}}
+{{/flashes}}
+
 
     <form action="" method="POST">
         <label for="">Titulo : 
-            <input type="text" name="tittle">
+            <input type="text" name="title">
         </label>
-    </br>
+    </br></br></br>
         <label for=""> Corpo: 
             <textarea name="body"></textarea>
 

@@ -1,4 +1,4 @@
-const app = require('./app'); // importando o arquivo app.js
+
 const mongoose = require('mongoose');
 
 
@@ -17,7 +17,7 @@ mongoose.connection.on('error',(error)=>{
 require('./models/Post');
 
 
-
+const app = require('./app'); // importando o arquivo app.js
 //CONEXÃO COM SERVIDOR
 app.set('port', process.env.PORT || 8081); // (nome da função + estou importando o arquivo variables.env, com as configurações de ambiente)
 

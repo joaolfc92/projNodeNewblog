@@ -3,5 +3,5 @@ exports.menu = [
     {nome: 'Sobre',slug:'/sobre'},
     {nome: 'contato',slug:'/contato'},
     {nome: 'blog' , slug : '/blog'},
-    {nome: 'Adicionar Post', slug:'/post/add'}
+    {nome: 'Adicionar Post', slug:'/post/add'} 
 ] // criando um menu com rotas pelos helpers

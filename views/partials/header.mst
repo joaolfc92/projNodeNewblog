@@ -3,7 +3,24 @@
 <ul>
 {{#h.menu}}
 
-<li><a href="{{slug}}">{{nome}}</li>
+<li><a href="{{slug}}">{{nome}}</a></li>
 
 {{/h.menu}}
 </ul>
+
+<hr>
+
+{{#flashes}}
+    {{#sucess}}
+        <div>{{.}}</div>
+    {{/sucess}}
+
+    {{#error}}
+        <div>{{.}}</div>
+    {{/error}}
+
+    {{#info}}
+        <div>{{.}}</div>
+    {{/info}}
+
+{{/flashes}}
