@@ -1,14 +1,15 @@
 <h1>Essa e a home</h1>
 
-<p>Eu sou um paragrafo</p>
+
 
 <hr>
 
 {{> header}}
 
 {{#posts}}
-    <h3><a href="/posts/{{slug}}"> {{title}}</a></h3>
+    <h3><a href="/post/{{slug}}"> {{title}}</a></h3>
     <p>{{body}}</p>
+    <a href="/post/{{slug}}/edit">[Editar] </a>
     <hr>
 
 {{/posts}}

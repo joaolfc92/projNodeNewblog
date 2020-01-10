@@ -13,7 +13,8 @@ router.get('/sobre', sobreController.sobreController)
 router.get('/contato', contatoController.contatoController) 
 router.get('/post/add', postController.postAdd)  // rota de envio ate a pagina post
 router.post('/post/add', postController.addAction) // rota de recebimento dos dados do form
-
+router.get('/post/:slug/edit', postController.edit)// rota para edição de posts
+router.post('/post/:slug/edit', postController.editAction)
 
 
 

@@ -8,8 +8,8 @@ const cookieParser = require('cookie-parser');
 const flash = require('express-flash');
 const session = require('express-session')   
 
-   
-
+    
+ 
 // configurações 
 
     // MUSTACHE
@@ -17,8 +17,8 @@ app.engine('mst', mustache(__dirname + '/views/partials','.mst')) // mst extenç
 app.set('view engine', 'mst'); // configurando a engine
 app.set('views', __dirname + '/views'); // dizendo aonde irá estar os arquivos 
 
-    // arquivos json
-app.use(express.json())
+    // arquivos json 
+app.use(express.json())  
 app.use(express.urlencoded({extended:true}))    
 
     // cookie

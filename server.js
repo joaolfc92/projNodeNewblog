@@ -5,11 +5,11 @@ const mongoose = require('mongoose');
 require('dotenv').config({path:'variables.env'})
 
 // CONEXÃO AO BANCO DE DADOS COM MONGOOSE
-mongoose.connect(process.env.DATABASE,  { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASE,  { useNewUrlParser: true, useFindAndModify:false });
 mongoose.Promise = global.Promise;
 mongoose.connection.on('error',(error)=>{
     console.error('Erro'+error.message)
-})
+}) 
 
 
 // carregando os MODELS

@@ -37,4 +37,4 @@ postSchema.pre('save', function(next){ // pre de pre salvamento
 })
 
 
-module.exports = mongoose.model('Post', postSchema);
+module.exports = mongoose.model('Post', postSchema); 
