@@ -12,6 +12,9 @@ const session = require('express-session')
  
 // configurações 
 
+    // css/js/image
+    app.use(express.static(__dirname+'/public'))
+
     // MUSTACHE
 app.engine('mst', mustache(__dirname + '/views/partials','.mst')) // mst extenção do engine, e a função com a bibilhoteca 
 app.set('view engine', 'mst'); // configurando a engine
@@ -31,6 +34,9 @@ app.use(session({
     saveUninitialized:false
 
 }))    
+
+
+    
 
  
     // flash

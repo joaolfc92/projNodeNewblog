@@ -8,16 +8,24 @@ const postController = require('../controllers/postController');
 
 // (nome do arquivo. nome da função criada no arquivo)
 
+// rotas principais
 router.get('/' ,homeController.index)
-router.get('/sobre', sobreController.sobreController)
+router.get('/sobre', sobreController.sobreController) 
 router.get('/contato', contatoController.contatoController) 
+
+
+// rotas de adição
 router.get('/post/add', postController.postAdd)  // rota de envio ate a pagina post
 router.post('/post/add', postController.addAction) // rota de recebimento dos dados do form
+
+// rotas de edição 
 router.get('/post/:slug/edit', postController.edit)// rota para edição de posts
 router.post('/post/:slug/edit', postController.editAction)
+  
+// rotas de visualização 
 
-
-
+router.get('/post/:slug', postController.view) //    
+  
 
 module.exports = router;
 

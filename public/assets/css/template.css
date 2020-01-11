@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    background-color: #eee;
+    margin: 0;
+}
+
+header{
+    background-color: #ddd;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+header h1{
+    text-align: center;
+    
+}
+a{
+    color:#000;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+form{
+    margin: 20px;
+}
+
+label{
+    display: inline-block;
+    margin: 5px 0;
+}
+
+input, textarea{
+    display: block;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+    outline: 0;
+    resize: none;
+    margin-top: 10px;
+    width: 400px;
+}
+
+textarea{
+    height: 200px;
+}
+
+input[type=submit]:hover{
+    background-color: #efefef;
+    cursor: pointer;
+}
+
+li{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.post {
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 120px;
+    width: 298px;
+    /* text-align: center; */
+    display: inline-block;
+    margin: 15px;
+    /* line-height: 2; */
+    padding-left: 10px;
+}
+
+.title_home{
+    text-align: center;
+}
+
+.form__center{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+

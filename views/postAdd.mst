@@ -6,7 +6,8 @@
     {{/error}}
 {{/flashes}}
 
-
+    
+<div class="form__center">
     <form action="" method="POST">
         <label for="">Titulo : 
             <input type="text" name="title">
@@ -18,9 +19,13 @@
         </label>
     </br>
         <label for="">Tags</label>
+        <small>(Separar as tags por virgula)</small>
+        <input text="text" name="tags">
     </br>
+
         <label for="">
             <input type="submit" value="Salvar">
 
         </label>
     </form>
+ </div>   

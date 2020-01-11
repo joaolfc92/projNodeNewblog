@@ -7,6 +7,7 @@ exports.postAdd= (req,res)=>{
 }
 // salvando no banco de dados
 exports.addAction = async (req,res)=>{
+    req.body.tags = req.body.tags.split(',').map(t=>t.trim()) // pegando as tags as separando por virgula, e depois retirando os espaços
     const post = new Post(req.body);
 
     // tratando erros
@@ -31,7 +32,9 @@ exports.edit = async (req,res)=>{
 }
 
 exports.editAction = async (req,res)=>{
+     
      req.body.slug = require('slug')(req.body.title, {lower:true})
+     req.body.tags = req.body.tags.split(',').map(t=>t.trim())
 
     try{ 
 
@@ -51,9 +54,17 @@ exports.editAction = async (req,res)=>{
     }
     
     // mostrar mensagem de sucesso
-
+ 
     req.flash('sucess', 'Post atualizado com sucesso')
     // redirecionar
 
-    res.redirect('/') 
+    res.redirect('/')          
+}
+
+
+exports.view = async (req,res)=>{
+    // pegar as informações do post
+    const post = await Post.findOne({slug: req.params.slug})
+    // carregar o form de edição
+    res.render('view',{ post:post})  
 }

@@ -1,4 +1,13 @@
+
+<html>
+<head>
+<title></title>
+ <link rel="stylesheet" href="/assets/css/template.css">
+<body>
+
+<header>
 <h1>EU SOU O HEADER</h1>
+
 
 <ul>
 {{#h.menu}}
@@ -9,18 +18,22 @@
 </ul>
 
 <hr>
+</header>
+
+
 
 {{#flashes}}
-    {{#sucess}}
-        <div>{{.}}</div>
-    {{/sucess}}
+    <div class="warning">
+        {{#sucess}}
+            <div>{{.}}</div>
+        {{/sucess}}
 
-    {{#error}}
-        <div>{{.}}</div>
-    {{/error}}
+        {{#error}}
+            <div>{{.}}</div>
+        {{/error}}
 
-    {{#info}}
-        <div>{{.}}</div>
-    {{/info}}
-
+        {{#info}}
+            <div>{{.}}</div>
+        {{/info}}
+    </div>
 {{/flashes}}
