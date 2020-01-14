@@ -71,16 +71,26 @@ li{
 }
 
 .post {
-    border-radius: 5px;
-    border: 1px solid black;
-    height: 120px;
+    border-radius: 10px;
+    
+    box-shadow: 10px 10px 10px 5px black;
+    height: auto;
     width: 298px;
     /* text-align: center; */
     display: inline-block;
     margin: 15px;
     /* line-height: 2; */
-    padding-left: 10px;
+    
 }
+
+.post img{
+    max-width: 100%;
+    height: 250px;
+    width: 298px;
+    object-fit: cover;
+}
+
+
 
 .title_home{
     text-align: center;
@@ -90,5 +100,19 @@ li{
     display: flex;
     justify-content: center;
     margin-top: 60px;
+}
+
+.sucess{
+    height: 50px;
+    background-color: greenyellow;
+    text-align: center;
+    line-height: 50px;
+    width: 100%;
+}
+
+.sucess__error{
+    background-color: red;
+    color:white;
+    font-weight: bolder;
 }
 

@@ -5,8 +5,9 @@ mongoose.Promise = global.Promise;
 
 
 // CRIANDO A ESTRUTURA DOS POST NO BANCO DE DADOS
-const postSchema = new mongoose.Schema({
-    title:{
+const postSchema = new mongoose.Schema({   
+    photo:String,    
+    title:{           
         type:String,
         trim:true,
         required:"Preencha o campo titulo"
@@ -16,10 +17,10 @@ const postSchema = new mongoose.Schema({
         type:String
     },
 
-    body:{
+    body:{ 
         type:String,
-        trim:true
-    },
+        trim:true 
+    }, 
 
     tags:[String]
 
@@ -27,9 +28,17 @@ const postSchema = new mongoose.Schema({
 });
 
 // criação do slug
-postSchema.pre('save', function(next){ // pre de pre salvamento
+postSchema.pre('save', async function(next){ // pre de pre salvamento
    if(this.isModified('title')){ // if de criação de slug e modificação caso o mesmo seja modificado
         this.slug = slug(this.title,{lower:true});
+
+        const slugRegex = new RegExp(`^(${this.slug})((-[0-9]{1,}$)?)$`, 'i')
+
+        const postWithSlug = await this.constructor.find({slug:slugRegex});
+
+        if(postWithSlug.length>0){
+            this.slug = `${this.slug}-${postWithSlug.length+1}`;
+        }
     }
     
 

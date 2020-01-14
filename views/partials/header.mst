@@ -25,11 +25,11 @@
 {{#flashes}}
     <div class="warning">
         {{#sucess}}
-            <div>{{.}}</div>
+            <div class="sucess">{{.}}</div>
         {{/sucess}}
 
         {{#error}}
-            <div>{{.}}</div>
+            <div class="sucess sucess__error">{{.}}</div>
         {{/error}}
 
         {{#info}}
