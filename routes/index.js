@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const homeController = require('../controllers/homeController');
-const sobreController = require('../controllers/sobreController')
-const contatoController = require('../controllers/contatoController')
+const loginController = require('../controllers/loginController') 
 const postController = require('../controllers/postController');
 const imageMiddleware = require('../middlewares/imageMiddleware')
 
@@ -10,9 +9,10 @@ const imageMiddleware = require('../middlewares/imageMiddleware')
 // (nome do arquivo. nome da função criada no arquivo)
 
 // rotas principais  
-router.get('/' ,homeController.index)
-router.get('/sobre', sobreController.sobreController) 
-router.get('/contato', contatoController.contatoController) 
+router.get('/' ,homeController.index) 
+router.get('/users/login', loginController.loginController) 
+router.get('/users/register', loginController.register)
+router.post('/users/register', loginController.registerAction) 
 
 
 // rotas de adição
@@ -20,7 +20,7 @@ router.get('/post/add', postController.postAdd)  // rota de envio ate a pagina p
 router.post('/post/add', 
     imageMiddleware.upload, // midleware de upload de foto
     imageMiddleware.resize,  // middleware de redimencionamento de foto
-    postController.addAction) // rota de recebimento dos dados do form
+    postController.addAction) // rota de recebimento dos dados do form 
 
 // rotas de edição 
 router.get('/post/:slug/edit', postController.edit)// rota para edição de posts

@@ -1,3 +1,5 @@
+<body class="addpostback">
+
 {{> header}}
 
 {{#flashes}}
@@ -36,3 +38,5 @@
         </label>
     </form>
  </div>   
+
+ </body>

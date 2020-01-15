@@ -41,7 +41,7 @@ postSchema.pre('save', async function(next){ // pre de pre salvamento
         }
     }
     
-
+  
     next();
 })
 

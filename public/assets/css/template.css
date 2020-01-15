@@ -116,3 +116,22 @@ li{
     font-weight: bolder;
 }
 
+.tags{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.tags .tag{
+ padding: 10px;
+}
+
+.tag.selected a {
+    color:red;
+}
+
+
+.addpostback{
+    background:linear-gradient(to top,#6d3880, #e97992, #605b83);
+}

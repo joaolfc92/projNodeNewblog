@@ -1,15 +1,10 @@
-<h1 class="title_home">Essa e a home</h1>
-
-
-
-
 
 {{> header}}
 
 <div class="tags">
 
     {{#tags}}
-        <div class="tag">{{_id}} ({{count}}) </div>
+        <div class="tag {{class}}"><a href="/?t={{_id}}">{{_id}} ({{count}})</a> </div>
 
     {{/tags}}
 

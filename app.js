@@ -6,7 +6,10 @@ const helpers = require('./helpers') // importando o arquivo de helpers
 const errorHandler= require('./handlers/errorHandler') // importando arquivo de ERRO
 const cookieParser = require('cookie-parser');
 const flash = require('express-flash');
-const session = require('express-session')   
+const session = require('express-session')  ; 
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+
 
     
  
@@ -33,17 +36,13 @@ app.use(session({
     resave: false,
     saveUninitialized:false
 
-}))    
+}))   
 
-
-    
-
- 
     // flash
 app.use(flash());    
 
-     
-
+   
+ 
     
 // ROTAS
 
@@ -55,6 +54,18 @@ app.use((req,res,next)=>{
     res.locals.flashes = req.flash();
     next();
 })
+
+
+// passport
+app.use(passport.initialize())
+app.use(passport.session())
+
+
+const User = require('./models/User');
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser())
+passport.deserializeUser(User.deserializeUser())
+  
 
 // Arquivo de rota principal
 app.use('/', router); 
