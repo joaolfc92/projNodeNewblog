@@ -6,6 +6,15 @@
 
 {{> header}}
 
+<div class="tags">
+
+    {{#tags}}
+        <div class="tag">{{_id}} ({{count}}) </div>
+
+    {{/tags}}
+
+</div>
+
 {{#posts}}
     <div class="post">
         

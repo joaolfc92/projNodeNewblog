@@ -17,7 +17,7 @@ router.get('/contato', contatoController.contatoController)
 
 // rotas de adição
 router.get('/post/add', postController.postAdd)  // rota de envio ate a pagina post
-router.post('/post/add',
+router.post('/post/add', 
     imageMiddleware.upload, // midleware de upload de foto
     imageMiddleware.resize,  // middleware de redimencionamento de foto
     postController.addAction) // rota de recebimento dos dados do form

@@ -38,6 +38,6 @@ exports.resize = async(req,res,next)=>{
 
     await photo.write(`./public/media/${filename}`) // lugar onde a img sera salva
 
-    next();
+    next(); 
 
 }

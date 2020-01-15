@@ -6,4 +6,4 @@
 
 <hr>
 
-<small>{{post.tags}}</small>
+<small>Tags: {{post.tags}}</small>
