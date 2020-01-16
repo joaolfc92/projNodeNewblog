@@ -3,7 +3,7 @@ const Post = mongoose.model('Post');
 
 
 exports.postAdd= (req,res)=>{
-    res.render('postAdd') 
+    res.render('postAdd')  
 }
 // salvando no banco de dados
 exports.addAction = async (req,res)=>{
@@ -15,7 +15,7 @@ exports.addAction = async (req,res)=>{
         await post.save()
     } catch(error){ 
         req.flash('error', 'Error'+error.message)
-        return res.redirect('/post/add')
+        return res.redirect('/post/add') 
         
     }
     

@@ -11,6 +11,8 @@ const imageMiddleware = require('../middlewares/imageMiddleware')
 // rotas principais  
 router.get('/' ,homeController.index) 
 router.get('/users/login', loginController.loginController) 
+router.post('/users/login', loginController.loginAction)
+
 router.get('/users/register', loginController.register)
 router.post('/users/register', loginController.registerAction) 
 

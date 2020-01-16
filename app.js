@@ -11,6 +11,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 
+
     
  
 // configurações 
@@ -42,7 +43,9 @@ app.use(session({
 app.use(flash());    
 
    
- 
+ // passport
+app.use(passport.initialize())
+app.use(passport.session())
     
 // ROTAS
 
@@ -52,13 +55,12 @@ app.use(flash());
 app.use((req,res,next)=>{
     res.locals.h = helpers; // criando variaveis globais 
     res.locals.flashes = req.flash();
+    res.locals.user = req.user;
     next();
 })
 
 
-// passport
-app.use(passport.initialize())
-app.use(passport.session())
+
 
 
 const User = require('./models/User');

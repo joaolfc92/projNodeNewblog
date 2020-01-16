@@ -5,10 +5,13 @@ const Post = mongoose.model('Post')
 exports.index = async (req,res)=>{
 
     let responseJson ={
-        posts:[], 
+        posts:[],  
         tags:[],
         tag:''
     } 
+
+    
+    console.log(req.user)
 
     // filtrando tags
     responseJson.tag = req.query.t;

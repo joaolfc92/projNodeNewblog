@@ -23,4 +23,4 @@ app.set('port', process.env.PORT || 8081); // (nome da função + estou importan
 
 const server = app.listen(app.get('port'), ()=>{
     console.log('http://localhost:'+server.address().port) // dizendo ao servidor em qual porta rodar
-})
+}) 

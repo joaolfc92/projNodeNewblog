@@ -135,3 +135,10 @@ li{
 .addpostback{
     background:linear-gradient(to top,#6d3880, #e97992, #605b83);
 }
+
+.infoLogin{
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}

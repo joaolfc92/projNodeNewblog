@@ -5,7 +5,7 @@
 
 		<div class="formulario">
 			<form method="POST"  name="form" id="form">
-				<input type="text" name="name" id="username" placeholder="Username" required>
+				<input type="email" name="email"  placeholder="Usermail" required>
 				<input type="password" name="password" id="senha" placeholder="Password" required>
 				<button onclick="enviar()">Login</button>
 			</form>

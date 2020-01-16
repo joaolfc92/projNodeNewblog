@@ -8,6 +8,13 @@
 <header>
 <h1>EU SOU O HEADER</h1>
 
+<div class="infoLogin">
+
+{{#user}}
+    Olá, {{user.name}} !! <a href="/users/logout"> Logout </a>
+{{/user}} 
+
+</div>
 
 <ul>
 {{#h.menu}}
