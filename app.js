@@ -53,9 +53,16 @@ app.use(passport.session())
 
     // carregando arquivo helpers
 app.use((req,res,next)=>{
-    res.locals.h = helpers; // criando variaveis globais 
+    res.locals.h = { ...helpers }; // criando variaveis globais 
     res.locals.flashes = req.flash();
     res.locals.user = req.user;
+
+    if(req.isAuthenticated()){
+        res.locals.h.menu = res.locals.h.menu.filter(i=>(i.guest || i.logged)) 
+    }else{
+        res.locals.h.menu = res.locals.h.menu.filter(i=>i.guest) 
+    }
+
     next();
 })
 

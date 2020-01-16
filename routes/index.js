@@ -4,6 +4,7 @@ const homeController = require('../controllers/homeController');
 const loginController = require('../controllers/loginController') 
 const postController = require('../controllers/postController');
 const imageMiddleware = require('../middlewares/imageMiddleware')
+const authMiddleware = require('../middlewares/authMiddleware');
 
 
 // (nome do arquivo. nome da função criada no arquivo)
@@ -12,21 +13,24 @@ const imageMiddleware = require('../middlewares/imageMiddleware')
 router.get('/' ,homeController.index) 
 router.get('/users/login', loginController.loginController) 
 router.post('/users/login', loginController.loginAction)
+router.get('/users/logout', loginController.logoutAction)
 
 router.get('/users/register', loginController.register)
 router.post('/users/register', loginController.registerAction) 
 
 
 // rotas de adição
-router.get('/post/add', postController.postAdd)  // rota de envio ate a pagina post
+router.get('/post/add', authMiddleware.isLogged ,postController.postAdd)  // rota de envio ate a pagina post
 router.post('/post/add', 
+    authMiddleware.isLogged,
     imageMiddleware.upload, // midleware de upload de foto
     imageMiddleware.resize,  // middleware de redimencionamento de foto
     postController.addAction) // rota de recebimento dos dados do form 
 
 // rotas de edição 
-router.get('/post/:slug/edit', postController.edit)// rota para edição de posts
+router.get('/post/:slug/edit' , authMiddleware.isLogged , postController.edit)// rota para edição de posts
 router.post('/post/:slug/edit',  
+authMiddleware.isLogged,
 imageMiddleware.upload, // midleware de upload de foto
 imageMiddleware.resize,  // middleware de redimencionamento de foto
 postController.editAction)

@@ -8,6 +8,7 @@ exports.postAdd= (req,res)=>{
 // salvando no banco de dados
 exports.addAction = async (req,res)=>{
     req.body.tags = req.body.tags.split(',').map(t=>t.trim()) // pegando as tags as separando por virgula, e depois retirando os espaços
+    req.body.author = req.user._id;
     const post = new Post(req.body);
 
     // tratando erros

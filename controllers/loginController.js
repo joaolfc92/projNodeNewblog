@@ -41,3 +41,9 @@ exports.registerAction = (req,res) =>{
     })
 
 }
+
+
+exports.logoutAction = (req,res) =>{ 
+    req.logout();
+    res.redirect('/')
+}

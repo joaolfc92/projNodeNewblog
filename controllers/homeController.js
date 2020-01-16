@@ -26,7 +26,7 @@ exports.index = async (req,res)=>{
 
     const postFilter = (typeof responseJson.tag != 'undefined') ? {tags: responseJson.tag} : {};
      
-    const posts = await Post.find(postFilter)
+    const posts = await Post.findPosts(postFilter)
 
     responseJson.posts = posts
 
