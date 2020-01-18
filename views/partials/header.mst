@@ -11,7 +11,7 @@
 <div class="infoLogin">
 
 {{#user}}
-    Olá, {{user.name}} !! <a href="/users/logout"> Logout </a>
+    Olá, <a href="/profile"> {{user.name}} </a>!! <a href="/users/logout"> Logout </a>
 {{/user}} 
 
 </div>

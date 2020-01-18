@@ -1,0 +1,128 @@
+
+{{> header}}
+
+<div class="container">
+		<h2> Edit My Profile</h2>
+
+		<div class="formulario">
+			<form method="POST" name="form" >
+				<input type="text" name="name"  value="{{user.name}}">
+                <input type="email" name="email" value="{{user.email}}" >
+                
+				
+				<button onclick="enviar()">Sing Up</button>
+			</form>
+
+
+            <form method="POST" action="/profile/password">
+                <input type="password" name="password"  placeholder="Password">
+                <input type="password" name="password-confirm"  placeholder="Replace Password">
+
+                <br><br>
+
+                <button onclick="enviar()">Sing Up</button>
+            </form>
+		</div>
+	</div>
+
+	<script>
+		
+
+
+
+
+
+
+	</script>
+
+    <style>
+
+        body{
+		background:linear-gradient(to top,#6d3880, #e97992, #605b83);
+		height: 555px;
+	    }
+
+
+    	.container{
+		height: 450px;
+		width: 450px;
+		background-color: transparent;
+		top:50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		position: absolute;
+		
+	}	
+
+	h2{
+		margin-top: 100px;
+		text-align: center;
+		color: white;
+		font-size: 30px;
+		font-weight: normal;
+		font-family: gadugi;
+
+
+
+	}
+
+	.formulario{
+		
+		height: 182px;
+		width: 267px;
+		margin-top: 55px;
+		margin-left: 90px;
+
+
+	}
+
+	input{
+		display: block;
+		height: 50px;
+		width: 265px;
+		text-align: center;
+		color: white;
+		background-color: rgba(197,191,193,0.25);
+		font-size: 18px;
+		font-family: gadugi;
+		border:1px solid #ccc;
+
+
+	}
+
+::-webkit-input-placeholder {
+   color: white;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: white;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;  
+}
+
+:-ms-input-placeholder {  
+   color: white;  
+}
+
+	#senha{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	button{
+		height: 50px;
+		width: 267px;
+		text-align: center;
+		color: lightgreen ;
+		background-color: rgba(197,191,193,0.25);
+		font-size: 18px;
+		font-family: gadugi;
+		border:2px solid lightgreen;
+		cursor:pointer;
+
+	}
+
+
+    </style>

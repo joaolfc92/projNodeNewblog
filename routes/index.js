@@ -18,6 +18,11 @@ router.get('/users/logout', loginController.logoutAction)
 router.get('/users/register', loginController.register)
 router.post('/users/register', loginController.registerAction) 
 
+router.get('/profile', authMiddleware.isLogged , loginController.profile)
+router.post('/profile', authMiddleware.isLogged , loginController.profileAction)
+
+router.post('/profile/password',  authMiddleware.isLogged , authMiddleware.changePAssword)
+
 
 // rotas de adição
 router.get('/post/add', authMiddleware.isLogged ,postController.postAdd)  // rota de envio ate a pagina post

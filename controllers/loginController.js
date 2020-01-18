@@ -47,3 +47,24 @@ exports.logoutAction = (req,res) =>{
     req.logout();
     res.redirect('/')
 }
+
+exports.profile = (req,res) =>{
+    res.render('profile')
+}
+
+exports.profileAction = async (req,res) =>{
+    try {
+        const user = await User.findOneAndUpdate(
+            {_id: req.user._id},
+            { name:req.body.name, email:req.body.email},
+            { new:true, runValidators:true }
+        )
+    } catch(e) {
+            res.flash('error', 'Ocorreu um erro, tente novamente mais tarde')
+            res.redirect('/profile')
+            return;
+
+    }
+        req.flash('sucess', 'Dados atualizados com sucesso !!')
+        res.redirect('/profile')
+}
