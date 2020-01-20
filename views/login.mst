@@ -10,6 +10,8 @@
 				<button onclick="enviar()">Login</button>
 			</form>
 
+			<a href="/users/forget"> I forgot my password </a>
+
 		</div>
 	</div>
 
@@ -39,6 +41,7 @@
 		left: 50%;
 		transform: translateX(-50%) translateY(-50%);
 		position: absolute;
+		text-align:center;
 		
 	}	
 
@@ -111,5 +114,7 @@
 		cursor:pointer;
 	}
 
+	
+	
 
     </style>

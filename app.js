@@ -58,7 +58,7 @@ app.use((req,res,next)=>{
     res.locals.user = req.user;
 
     if(req.isAuthenticated()){
-        res.locals.h.menu = res.locals.h.menu.filter(i=>(i.guest || i.logged)) 
+        res.locals.h.menu = res.locals.h.menu.filter(i=>i.logged)
     }else{
         res.locals.h.menu = res.locals.h.menu.filter(i=>i.guest) 
     }

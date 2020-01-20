@@ -18,6 +18,13 @@ router.get('/users/logout', loginController.logoutAction)
 router.get('/users/register', loginController.register)
 router.post('/users/register', loginController.registerAction) 
 
+router.get('/users/forget', loginController.forget);
+router.post('/users/forget', loginController.forgetAction)
+
+router.get('/users/reset/:token', loginController.forgetToken)
+router.post('/users/reset/:token', loginController.forgetTokenAction)
+
+
 router.get('/profile', authMiddleware.isLogged , loginController.profile)
 router.post('/profile', authMiddleware.isLogged , loginController.profileAction)
 
