@@ -1,2 +1,13 @@
+requisitos para o sistema
 
-(https://user-images.githubusercontent.com/46541402/74200772-93d73e00-4c46-11ea-9fc2-d42700616e87.png)
+-nodejs, mongo db,
+-instalar todas as dependências do packge.json
+
+o blog contem:
+
+-home para logados ou não
+-criação de usuario
+-tela de login/logouf
+-adição e edição de posts com envio de imagens
+-campo de esqueci minha senha
+-rotas protegidas apenas para usuarios logados
