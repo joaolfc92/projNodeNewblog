@@ -1,18 +1,2 @@
-requisitos : 
--node js,mongodb
--instalar as dependencias do packge.json
 
-funcionalidades implementadas no blog:
-- criação de usuarios
-
-
-
-- adição e edição de posts com upload de imagens<br><br>
-
-
-
-
-- login/logout
-- rotas protejidas visualizadas apenas por usuarios logados
-- edição de perfil 
-- troca/esqueci senha 
+(https://user-images.githubusercontent.com/46541402/74200772-93d73e00-4c46-11ea-9fc2-d42700616e87.png)
